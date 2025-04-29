@@ -3,40 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <title>Plan de planes: El último plan de Monstrul</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #ffe5e5, #ffcccc);
-      color: #7b0000;
+      background: linear-gradient(to bottom right, #ffd6d6, #ffc6f0);
+      color: #6b0f1a;
       padding: 20px;
       margin: 0;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      animation: fondoAnimado 6s infinite alternate;
     }
+
+    @keyframes fondoAnimado {
+      from {
+        background: linear-gradient(to bottom right, #ffd6d6, #ffc6f0);
+      }
+      to {
+        background: linear-gradient(to bottom right, #ffc6f0, #ffd6d6);
+      }
+    }
+
     .container {
       max-width: 650px;
-      background: #fffafa;
+      background: #fff0f5;
       padding: 30px;
       border-radius: 18px;
-      box-shadow: 0px 8px 20px rgba(255, 0, 0, 0.3);
+      box-shadow: 0px 8px 25px rgba(255, 105, 180, 0.4);
       text-align: center;
       animation: aparecer 1s ease;
     }
-    h1, h2 {
-      color: #b30000;
+
+    h1 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 36px;
+      color: #ff3c6f;
       margin-bottom: 20px;
     }
+
+    h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 30px;
+      color: #e60073;
+      margin-bottom: 20px;
+    }
+
     p {
       font-size: 16px;
       line-height: 1.6;
       margin-bottom: 20px;
     }
+
     button {
       margin-top: 10px;
-      background-color: #e60000;
+      background-color: #ff4d6d;
       color: white;
       border: none;
       padding: 12px 24px;
@@ -46,21 +69,24 @@
       cursor: pointer;
       transition: background-color 0.3s, transform 0.2s;
     }
+
     button:hover {
-      background-color: #cc0000;
+      background-color: #e6005c;
       transform: scale(1.05);
     }
+
     input, textarea {
       width: 100%;
       padding: 12px;
       margin-top: 10px;
       border-radius: 10px;
-      border: 1px solid #e60000;
-      background-color: #fff0f0;
+      border: 1px solid #ff80aa;
+      background-color: #fff0f5;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
       font-size: 16px;
     }
+
     @keyframes aparecer {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -72,19 +98,17 @@
 <div class="container" id="content">
   <h1>Plan de planes: El último plan de Monstrul 👾</h1>
 
-  <!-- Disclaimers -->
   <div id="disclaimer">
     <p><strong>Disclaimer 1:</strong> Esta es una página web hecha 100% por MONSTRUL INC. Si te llegó el enlace a esta página es porque el CEO de la empresa quiere decirte algo y, como tiene nulas habilidades sociales, no le alcanza con decírtelo por mensaje. Cualquier queja, por favor comunicarse con el equipo de legales de la compañía o directamente denunciar a la policía para que ejecuten una orden de restricción. Esperamos que la destinataria no llegue a tomar esas medidas.</p>
     <p><strong>Disclaimer 2:</strong> MONSTRUL INC. se disculpa de antemano por cualquier sentimiento negativo generado.</p>
-    <p><strong>Disclaimer 3:</strong> MONSTRUL INC. entiende cualquier reacción adversa y promete no pensar más en el tema.</p>
-    <p><strong>Disclaimer 4:</strong> El CEO se compromete desaparecer de la faz de la tierra si esta última propuesta no funciona.</p>
+    <p><strong>Disclaimer 3:</strong> MONSTRUL INC. entiende cualquier reacción adversa y promete no insistir más en el tema.</p>
+    <p><strong>Disclaimer 4:</strong> El CEO se compromete desaparecer de la faz de la tierra si esta última propuesta no funciona aunque realmente espera que funcione.</p>
     <button onclick="mostrarDialogo()">Siguiente</button>
   </div>
 
-  <!-- Diálogo Previo a la Aceptación -->
   <div id="dialogoPrevio" style="display:none;">
-    <p>Monstrul era un tipo que no se daba por vencido fácilmente. Esta vez pensó en crear esta propuesta para invitar a Implacable a testear los servicios de MONSTRUL INC. ¡Era su última oportunidad antes de retirarse en silencio!</p>
-    <p>¿Aceptás participar y recibir tus NOZICOINS?</p>
+    <p>Monstrul era un tipo que no se daba por vencido fácilmente...</p>
+    <p>¿Aceptás participar y recibir 50 🪙NOZICOINS🪙?</p>
     <button onclick="decision('si')">Aceptar la invitación</button>
     <button onclick="decision('no')">Rechazar la invitación</button>
   </div>
@@ -102,19 +126,22 @@ function decision(respuesta) {
   if (respuesta === 'si') {
     contenedor.innerHTML = `
       <h2>🌶️ ¡Ganaste 50 NOZICOINS! 🌶️</h2>
-      <p>Vas a poder usar tus Monstrucréditos en el <strong>Gestor de Planes</strong> que aparece a continuación.</p>
-      <p>¡Hacé clic en el botón para continuar y armar tu experiencia personalizada!</p>
+      <p>Vas a poder usar tus NOZICOINS en el <strong>Gestor de Planes</strong> que aparece a continuación.</p>
+      <p>¡Hacé clic en el botón para seguir y solicitar tu experiencia personalizada!</p>
       <button onclick="redirigirFormulario()">Ir al Gestor de Planes</button>
     `;
   } else {
     contenedor.innerHTML = `
       <h2>Monstrul acaba de desaparecer de la faz de la tierra... 💔</h2>
+      <p>Dramatización con actores profesionales de los últimos momentos de Monstrul:</p>
+      <button onclick="window.open('https://www.instagram.com/p/DI4kUHLMJXA/', '_blank')">
+        Dramatización
+      </button>
     `;
   }
 }
 
 function redirigirFormulario() {
-  // Acá poné la URL de tu formulario real
   window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdTWAnrTnz7qmm-CEmlRsIGbigOQOmmXItXMHQcZ49wj7jshA/viewform?usp=header';
 }
 </script>
